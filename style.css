@@ -1,0 +1,142 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    
+}
+@keyframes slideshow {
+    0% {
+        background-image: url('./images/puzzle/2.jpg');
+    }
+
+    33% {
+        background-image: url('./images/back/p-3.jpg');
+    }
+
+    66% {
+        background-image: url('./images/back/p-5.jpg');
+    }
+
+    100% {
+        background-image: url('./images/back/p-7.jpg');
+    }
+}
+.sec{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    gap:50px;
+    /* background: rgba(0, 0, 0, 0.5); */
+    
+}
+.image-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-size: cover;
+    animation: slideshow 15s infinite;
+    filter: blur(5px);
+    /* Apply the blur effect to the image wrapper */
+}
+.drag{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap:wrap;
+    width: 320px;
+    gap:10px;
+    cursor:grab;
+}
+.drag .drag-box{
+    position:relative;
+    width:100px;
+    height: 100px;
+    background: #0003;
+
+}
+.images{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: var(--img);
+    background-position: center;
+    background-size:cover;
+}
+.reset{
+    position: absolute;
+    bottom:50px;
+    left:50%;
+    transform: translateX(-50%);
+    padding: 10px 25px;
+    border:none;
+    background: #fff;
+    color:#222;
+    font-size: 1em;
+    font-weight: 500;
+    cursor:pointer;
+    text-transform: uppercase;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #fff;
+    background: linear-gradient(45deg, #ff0000, #ff9900);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.566);
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    outline: none;
+}
+.board{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:10px;
+}
+.dropBox{
+    position: relative;
+    width: 140px;
+    height: 140px;
+    background: #0003;
+}
+.reset button {
+    position: relative;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: larger;
+    color: #fff;
+    background: linear-gradient(45deg, #0066ff, #00ccff);
+    /* Updated background gradient */
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.566);
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    outline: none;
+}
+
+.reset:hover {
+    background: linear-gradient(45deg, #3399ff, #66ffff);
+    /* Updated hover background gradient */
+    transform: scale(1.03);
+    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8);
+}
+
+.reset:active {
+    background: linear-gradient(45deg, #0033cc, #0099cc);
+    /* Updated active background gradient */
+    /* transform: scale(0.97); */
+    /* Added transform effect */
+    box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.8);
+    /* Updated active box-shadow */
+    color: #000;
+    /* Added text color change on active */
+}
